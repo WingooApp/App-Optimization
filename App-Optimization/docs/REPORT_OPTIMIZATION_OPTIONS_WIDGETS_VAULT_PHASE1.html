@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report Optimization Options Widgets Vault Phase 1</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --paper: #fffdf8;
+      --ink: #1f2a24;
+      --muted: #5f6f66;
+      --line: #d9d1bf;
+      --accent: #1b6b52;
+      --accent-soft: #e7f2ed;
+      --code: #f1ecdf;
+      --shadow: 0 18px 44px rgba(36, 43, 38, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(27,107,82,0.10), transparent 28%),
+        linear-gradient(180deg, #f0eadf 0%, var(--bg) 100%);
+      line-height: 1.65;
+    }
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
+    }
+    .hero {
+      margin-bottom: 24px;
+      padding: 28px 30px;
+      background: linear-gradient(135deg, rgba(27,107,82,0.12), rgba(255,255,255,0.8));
+      border: 1px solid rgba(27,107,82,0.14);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    button {
+      appearance: none;
+      border: 1px solid rgba(27,107,82,0.18);
+      background: var(--paper);
+      color: var(--accent);
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+    }
+    button:hover { background: var(--accent-soft); }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 34px 28px 40px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    p, li { font-size: 16px; }
+    ul, ol { margin: 8px 0 14px 24px; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--code);
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.92em;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section {
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(245,241,232,0.6), rgba(255,253,248,0.92));
+    }
+    .section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 1.2;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section summary::-webkit-details-marker { display: none; }
+    .section summary::before {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      flex: 0 0 auto;
+      font-weight: 700;
+    }
+    .section[open] summary::before { content: "−"; }
+    .section-content {
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,0.75);
+    }
+    .table-wrap {
+      margin: 14px 0 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #ebe4d5;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th {
+      background: #f8f3e7;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: 0; }
+    @media (max-width: 720px) {
+      .shell { padding: 20px 12px 48px; }
+      .hero, article { padding: 22px 18px; border-radius: 20px; }
+      .section summary { padding: 16px; font-size: 18px; }
+      .section-content { padding: 0 16px 16px; }
+      p, li { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="hero">
+      <p>Markdown được render thành trang web tĩnh. Tất cả mục <code>##</code> mặc định thu gọn để đọc nhanh hơn.</p>
+      <div class="toolbar">
+        <button type="button" data-action="expand">Expand All</button>
+        <button type="button" data-action="collapse">Collapse All</button>
+      </div>
+    </div>
+    <article><h1>Report Optimization Options Widgets Vault Phase 1</h1><details class="section"><summary>Mục đích file này</summary><div class="section-content"><p>Không phải file thực thi code.</p><p>File này trả lời 3 câu hỏi:</p><ol><li>App đang gặp vấn đề gì?</li><li>Có những options tối ưu nào?</li><li>Nếu chọn từng option thì cần theo dõi chỉ số gì, mong muốn chỉ số tăng hay giảm ra sao?</li></ol></div></details><details class="section"><summary>Thang mức độ nên update</summary><div class="section-content"><ul><li><code>1/5 - Không cần update</code>: chưa có lý do kinh doanh đủ mạnh để làm</li><li><code>2/5 - Theo dõi thêm</code>: có tín hiệu nhẹ, chưa đủ dữ liệu hoặc chưa phải lúc làm</li><li><code>3/5 - Có thể update</code>: có giá trị, có thể đưa vào backlog triển khai</li><li><code>4/5 - Nên update</code>: nên đưa vào danh sách triển khai gần</li><li><code>5/5 - Nên update ngay</code>: ưu tiên rất cao, nên xử lý trước các option khác</li></ul></div></details><details class="section"><summary>Tóm tắt hiện trạng</summary><div class="section-content"><h3>Tăng trưởng và retention</h3><ul><li>Store visitors: <code>15,055</code></li><li>Store acquisitions: <code>3,558</code></li><li>Store CVR: <code>23.63%</code></li><li>First opens: <code>1.53K</code>, giảm <code>3%</code></li><li>Active users:<ul><li><code>1 day</code>: <code>303</code></li><li><code>7 day</code>: <code>1.4K</code></li><li><code>30 day</code>: <code>4.5K - 4.8K</code></li></ul></li><li>Retention:<ul><li><code>D1</code>: <code>7.0%</code></li><li><code>D7</code>: <code>0.6%</code></li><li><code>D30</code>: gần như bằng <code>0</code></li></ul></li></ul><p>Đánh giá:</p><ul><li>App không thiếu traffic ở mức phải ưu tiên <code>ASO / visibility</code>.</li><li>Vấn đề chính là user có vào app nhưng không quay lại.</li><li>Kết luận: bottleneck hiện tại nằm ở <code>first session</code>, <code>UX</code>, hoặc <code>core value delivery</code>.</li></ul><h3>Monetization</h3><ul><li>Tổng ad revenue 30 ngày: <code>$43.97</code></li><li>Revenue share:<ul><li><code>Native</code>: <code>56.63%</code></li><li><code>Interstitial</code>: <code>31.36%</code></li><li><code>Banner</code>: <code>7.96%</code></li><li><code>App Open</code>: <code>4.05%</code></li></ul></li><li>eCPM:<ul><li><code>Interstitial</code>: <code>~$2.78</code></li><li><code>Native</code>: <code>~$1.21</code></li><li><code>App Open</code>: <code>~$1.01</code></li><li><code>Banner</code>: <code>~$0.35</code></li></ul></li></ul><p>Đánh giá:</p><ul><li>App không thiếu ad placement.</li><li><code>Native</code> và <code>Interstitial</code> đang tạo phần lớn doanh thu.</li><li><code>Banner</code> phủ rộng nhưng yield thấp.</li><li>Kết luận: vấn đề monetization không nằm ở số lượng placement, mà ở chất lượng placement, nhất là <code>banner</code>.</li></ul><h3>Quality</h3><ul><li><code>Issue rate</code>: <code>3.34%</code></li><li><code>Crash-free users</code>: <code>92.9%</code></li><li><code>ANR rate</code>: <code>0.09%</code></li><li>Rating: <code>4.48</code>, đang giảm <code>0.06</code></li></ul><p>Đánh giá:</p><ul><li>Đây là tín hiệu xấu rõ ràng.</li><li><code>Issue rate</code> và <code>crash-free users</code> đã đủ xấu để ảnh hưởng trực tiếp đến retention, rating và doanh thu.</li><li>Kết luận: <code>quality / crash</code> là vấn đề cấp cao, không phải việc phụ.</li></ul></div></details><details class="section"><summary>Đọc nhanh số liệu hiện tại</summary><div class="section-content"><h3>Traffic thấp + installs thấp</h3><ul><li>Không phải tín hiệu chính.</li><li><code>15,055</code> visitors và <code>3,558</code> acquisitions chưa cho thấy vấn đề lớn nhất nằm ở <code>visibility / ASO / marketing</code>.</li></ul><h3>Traffic tốt + conversion thấp</h3><ul><li>Có tín hiệu nhẹ, nhưng chưa phải vấn đề số 1.</li><li><code>Store CVR 23.63%</code> chưa tệ; một số country còn khá ổn như <code>Brazil</code>, <code>Mexico</code>, <code>Philippines</code>.</li><li>Kết luận: store page còn room để tối ưu, nhưng chưa phải bottleneck lớn nhất.</li></ul><h3>Installs tốt + D1/D7 thấp</h3><ul><li>Đây là tín hiệu xấu rõ nhất.</li><li><code>First opens 1.53K</code>, nhưng <code>D1 7.0%</code>, <code>D7 0.6%</code>, <code>D30</code> gần như <code>0</code>.</li><li>Kết luận: app có người vào, nhưng không giữ được; vấn đề nhiều khả năng nằm ở <code>first-session UX</code>, <code>ad pressure sớm</code>, hoặc <code>core value</code> tới quá chậm.</li></ul><h3>Retention tốt + revenue thấp</h3><ul><li>Không áp dụng cho app này.</li><li>Retention hiện không tốt, nên chưa thể kết luận revenue thấp là do monetization đơn thuần.</li></ul><h3>Revenue cao nhưng rating xấu</h3><ul><li>Có tín hiệu cảnh báo, nhưng chưa thể kết luận chỉ do ads.</li><li>Review đã có phàn nàn về ads, nhưng app cũng đang có <code>Issue rate 3.34%</code> và <code>Crash-free users 92.9%</code>.</li><li>Kết luận: rating xấu hiện tại có thể đến từ cả <code>ad pressure</code> lẫn <code>app quality / crash</code>.</li></ul></div></details><details class="section"><summary>Kết luận từ số liệu hiện tại</summary><div class="section-content"><ul><li>App chưa cho thấy dấu hiệu phải ưu tiên <code>ASO / visibility</code> trước.</li><li>App đang có <code>2 vấn đề lớn nhất</code>:<ul><li><code>quality / crash</code></li><li><code>retention rất yếu</code></li></ul></li><li><code>Monetization cleanup</code> là hướng có giá trị để test, nhất là với <code>banner</code>.</li><li>Nhưng nếu nhìn toàn bộ số liệu hiện tại, <code>monetization</code> chưa phải vấn đề gốc mạnh nhất.</li></ul></div></details><details class="section"><summary>Kết luận nhanh</summary><div class="section-content"><ul><li>App không thiếu ad placement.</li><li>Ba vấn đề nổi bật nhất hiện tại là:<ul><li><code>crash / issue rate</code> còn cao</li><li><code>retention</code> quá thấp</li><li><code>banner yield</code> rất thấp</li></ul></li><li>Đã đủ dữ liệu để xếp ưu tiên.</li><li>Không nên triển khai đồng thời nhiều hướng trong cùng một đợt đầu.</li></ul></div></details><details class="section"><summary>Option 1: TỐI ƯU APP CRASH</summary><div class="section-content"><h3>Chỉ số hiện tại</h3><ul><li><code>Crash-free users</code>: <code>92.9%</code></li><li><code>Issue rate</code>: <code>3.34%</code></li><li><code>ANR rate</code>: <code>0.09%</code></li><li><code>Rating</code>: <code>4.48</code>, đang giảm <code>0.06</code></li></ul><h3>Tình trạng</h3><ul><li>App đang crash ở một số flow quan trọng.</li><li>Top crash group chạm vào:<ul><li>widget update / render</li><li>main lifecycle</li><li>interstitial flow</li><li>widget selection flow</li></ul></li><li>Nếu chưa fix nhóm này, mọi rollout khác dễ bị méo kết quả.</li></ul><h3>Mức độ nên update</h3><ul><li><code>5/5 - Nên update ngay</code></li></ul><h3>Cần làm</h3><ul><li>Fix crash list</li><li>Ưu tiên crash ảnh hưởng đến:<ul><li>widget update / widget render</li><li>main activity lifecycle</li><li>interstitial flow</li><li>widget selection flow</li></ul></li></ul><h3>Mục đích</h3><ul><li>Cải thiện <code>Crash-free users</code></li><li>Giảm <code>Issue rate</code></li><li>Giảm ảnh hưởng xấu lên retention, rating, DAU và ad revenue</li></ul><h3>Triển khai</h3><ul><li>Hoàn thành file:<ul><li><a href="/Users/remi/Documents/AndroidProjects/OneWidget/OneWidget/docs/optimization/TODO_CRASHLIST_FIREBASE_PHASE1.md">TODO_CRASHLIST_FIREBASE_PHASE1.md</a></li></ul></li></ul><h3>Theo dõi</h3><ul><li>Theo dõi <code>Crash-free users</code></li><li>Theo dõi <code>Issue rate</code></li><li>Theo dõi top crash group theo ngày</li><li>Theo dõi review phàn nàn về bug / crash</li></ul><h3>Mong muốn</h3><ul><li><code>Crash-free users &gt; 99%</code></li><li><code>Issue rate &lt; 1%</code></li><li>Không còn crash group lớn mới sau release</li></ul><h3>Nhận xét</h3><ul><li>Đây là option ưu tiên cao nhất.</li><li>Nếu chưa xử lý crash mà đã sửa funnel hoặc ad mix, dữ liệu sau rollout sẽ dễ bị méo.</li></ul></div></details><details class="section"><summary>Option 2: TỐI ƯU RETENTION FIRST SESSION</summary><div class="section-content"><h3>Chỉ số hiện tại</h3><ul><li><code>D1</code>: <code>7.0%</code></li><li><code>D7</code>: <code>0.6%</code></li><li><code>D30</code>: gần như <code>0</code></li><li><code>7-day active users</code>: <code>1.4K</code></li><li><code>1-day active users</code>: <code>303</code></li><li><code>Engaged sessions per active user</code>: <code>1.5</code></li><li><code>Average engagement time per active user</code>: <code>3m 54s</code></li></ul><h3>Tình trạng</h3><ul><li>Retention đang yếu.</li><li>User vào app nhưng không quay lại đủ.</li><li>First session còn quá dài trước khi user chạm giá trị chính.</li><li>Dựa trên dữ liệu hiện có, các màn hình xuất hiện rất dày ở giai đoạn đầu gồm:<ul><li><code>SplashActivity</code>: <code>4,412</code> active users</li><li><code>LanguageActivity</code>: <code>3,451</code> active users</li><li><code>OnboardActivity</code>: <code>3,712</code> active users</li><li><code>CateFavoriteActivity</code>: <code>2,584</code> active users</li><li><code>MainActivity</code>: <code>2,583</code> active users</li></ul></li><li>Điều này cho thấy first session đang có quá nhiều bước trước khi user ổn định vào app.</li><li>Chưa có funnel event đủ chi tiết để xác định chính xác bước rơi mạnh nhất.</li><li>Với mục tiêu retention, đích cần tối ưu không phải là <code>vào Home</code>, mà là <code>hoàn thành widget đầu tiên và pin ra home screen</code> nhanh nhất có thể.</li></ul><h3>Mức độ nên update</h3><ul><li><code>4/5 - Nên update</code></li></ul><h3>Cần làm</h3><ul><li>Rút <code>first open</code> về flow ngắn nhất để user chạm <code>first widget success</code> nhanh nhất: bỏ <code>Language</code>, bỏ <code>Category Favorite</code>, vào <code>Home</code> và dẫn user tới flow tạo widget đầu tiên rồi <code>pin to home</code></li><li>Chuyển <code>Category/Favorites</code> sang <code>second open</code> như bước cá nhân hóa, còn <code>other open</code> đi thẳng vào <code>Home</code>; màn <code>Language</code> chỉ còn là tùy chọn trong <code>Settings</code></li></ul><h3>Mục đích</h3><ul><li>Tăng <code>D1</code></li><li>Tăng <code>D7</code></li><li>Tăng returning users</li><li>Tăng DAU và số impression từ user quay lại</li></ul><h3>Triển khai</h3><ul><li>Điều chỉnh route mở app trong source theo 3 tầng:<ul><li><code>first open</code>: không vào <code>Language</code>, không vào <code>CateFavorite</code>, đi thẳng tới <code>Home</code> và ưu tiên CTA dẫn tới flow tạo widget đầu tiên</li><li><code>second open</code>: show <code>Favorites/Category</code>, sau khi user hoàn tất mới vào <code>Home</code>; nếu cần interstitial thì chỉ đặt ở đây, không đặt ở first open</li><li><code>other open</code>: đi thẳng vào <code>Home</code></li></ul></li><li>Điều chỉnh <code>Language</code> thành chức năng trong <code>Settings</code>, còn first open tự bám theo <code>device locale</code></li><li>Giảm ad pressure ở early flow:<ul><li>không show interstitial trong <code>first open</code></li><li>không đặt native/banner cản trở trước khi user chạm được flow widget đầu tiên</li></ul></li><li>Triển khai và QA theo file:<ul><li><a href="/Users/remi/Documents/AndroidProjects/OneWidget/OneWidget/docs/optimization/TODO_RETENTION_FIRST_SESSION_PHASE1.md">TODO_RETENTION_FIRST_SESSION_PHASE1.md</a></li></ul></li><li>Bổ sung tracking hỗ trợ để theo dõi hiệu quả rollout theo file:<ul><li><a href="/Users/remi/Documents/AndroidProjects/OneWidget/OneWidget/docs/optimization/TODO_RETENTION_TRACKING_PHASE1.md">TODO_RETENTION_TRACKING_PHASE1.md</a></li></ul></li><li>Sau khi hoàn tất các hạng mục trên và pass QA, app có thể publish để đo hiệu quả retention của first session mới</li></ul><h3>Theo dõi</h3><ul><li><code>D1 retention</code></li><li><code>D7 retention</code></li><li><code>7-day active users</code></li><li><code>Engaged sessions per active user</code></li><li><code>Average engagement time per active user</code></li><li>Completion rate của:<ul><li><code>splash_open -&gt; home_open</code></li><li><code>home_open -&gt; first_widget_preview_open</code></li><li><code>preview -&gt; customize</code></li><li><code>customize -&gt; set_success</code></li><li><code>second_open -&gt; favorites_open</code></li><li><code>favorites_open -&gt; favorites_complete</code></li><li><code>favorites_complete -&gt; home_open</code></li></ul></li><li>Theo dõi ở level tổng app, chưa cần tách rollout theo country trong Phase 1; nếu cần segmentation thì ưu tiên theo <code>device locale</code> thay vì theo quốc gia</li></ul><h3>Mong muốn</h3><ul><li><code>D1 &gt; 10%</code></li><li><code>D7 &gt; 2%</code></li><li><code>D30 &gt; 1%</code></li><li><code>7-day active users</code> tăng so với baseline <code>1.4K</code></li><li><code>Engaged sessions per active user &gt; 1.5</code></li><li>Tăng tỷ lệ user chạm được <code>first widget success</code> ngay từ first open</li></ul><h3>Nhận xét</h3><ul><li>Retention đang rất yếu.</li><li>Nếu mục tiêu là tăng trưởng bền vững, đây là phương án đứng thứ 2 sau crash.</li></ul></div></details><details class="section"><summary>Option 3: TỐI ƯU MONETIZATION CLEANUP</summary><div class="section-content"><h3>Chỉ số hiện tại</h3><ul><li>Tổng ad revenue 30 ngày: <code>$43.97</code></li><li>Revenue share:<ul><li><code>Native</code>: <code>56.63%</code></li><li><code>Interstitial</code>: <code>31.36%</code></li><li><code>Banner</code>: <code>7.96%</code></li><li><code>App Open</code>: <code>4.05%</code></li></ul></li><li>eCPM:<ul><li><code>Interstitial</code>: <code>~$2.78</code></li><li><code>Native</code>: <code>~$1.21</code></li><li><code>App Open</code>: <code>~$1.01</code></li><li><code>Banner</code>: <code>~$0.35</code></li></ul></li></ul><h3>Tình trạng</h3><ul><li>Banner có độ phủ rộng nhưng yield rất thấp.</li><li>Native và interstitial đang là 2 nhóm tạo giá trị chính.</li><li>App không thiếu ad placement, vấn đề là placement nào đang kém hiệu quả.</li><li>Trong source hiện tại, <code>Home</code>, <code>Special</code> và <code>Customize</code> đều đang dùng <code>ExpandedBanner</code>.</li><li><code>HOME_BANNER_ADS</code> và <code>SPECIAL_BANNER_ADS</code> còn đang dùng cùng <code>adUnitId</code> và cùng <code>HOME_BANNER_ID</code>.</li><li>Điều này làm tăng khả năng banner đang chiếm diện tích lớn hơn mức cần thiết, trong khi <code>banner eCPM</code> hiện rất thấp.</li><li>App hiện cũng đang show interstitial khi user click <code>bottom navigation menu</code>.</li><li>Với <code>ACTIONS_FOR_SHOW = 3</code>, placement này dễ tạo cảm giác bị chặn ở các <code>second session</code> và <code>other open</code>, vì đây là hành vi điều hướng low-intent chứ không phải điểm chuyển đổi giá trị cao.</li><li>Đây là placement nên cân nhắc bỏ trước vì:<ul><li>user chỉ đang đổi tab để xem nội dung khác trong app, chưa phải lúc đã đạt một bước giá trị rõ như <code>preview -&gt; customize</code> hoặc <code>customize -&gt; save</code></li><li>hành vi click menu có thể xảy ra nhiều lần trong một session, nên nếu chèn interstitial ở đây sẽ tạo cảm giác app chặn điều hướng cơ bản</li><li>interstitial ở <code>bottom navigation</code> dễ làm xấu <code>engagement</code>, <code>session depth</code>, <code>retention</code> và cảm nhận chung về app hơn so với interstitial ở các flow intent cao</li><li>hiện retention của app đang yếu, nên cần ưu tiên giữ trải nghiệm điều hướng chính mượt trước khi tối ưu thêm doanh thu từ placement này</li></ul></li></ul><h3>Mức độ nên update</h3><ul><li><code>3/5 - Có thể update</code></li></ul><h3>Cần làm</h3><ul><li>Giảm mức độ xâm lấn của banner ở <code>Home</code>, ưu tiên thay <code>ExpandedBanner</code> bằng banner thường hoặc placement nhỏ hơn</li><li>Bỏ interstitial ở <code>bottom navigation</code>, chỉ giữ interstitial ở các flow intent cao hơn</li><li>Tách riêng chiến lược theo placement: test <code>Home banner</code> trước, sau đó mới quyết định có áp dụng tiếp cho <code>Special</code> hay không</li></ul><h3>Mục đích</h3><ul><li>Giảm ad pressure ở placement rộng nhưng yield thấp</li><li>Giữ revenue từ placement mạnh hơn như <code>Native</code> và <code>Interstitial</code></li><li>Cải thiện user comfort</li><li>Bảo vệ retention và rating</li></ul><h3>Triển khai</h3><ul><li>Chọn <code>Home</code> làm rollout đầu tiên cho banner cleanup</li><li>Đổi <code>HOME_BANNER_ADS</code> khỏi kiểu <code>ExpandedBanner</code>, thay bằng banner ít chiếm diện tích hơn</li><li>Gỡ interstitial khi user click <code>bottom navigation menu</code></li><li>Chưa đổi global <code>ACTIONS_FOR_SHOW = 3</code> ở đợt này; ưu tiên bỏ placement low-intent trước rồi mới đo lại</li><li>Chưa đổi đồng loạt <code>Special</code> và <code>Customize</code> trong cùng đợt đầu để tránh nhiễu kết quả</li><li>Nếu kết quả tốt, mới mở rộng sang <code>SPECIAL_BANNER_ADS</code></li><li>Triển khai và QA theo file:<ul><li><a href="/Users/remi/Documents/AndroidProjects/OneWidget/OneWidget/docs/optimization/TODO_BANNER_CLEANUP_PHASE1.md">TODO_BANNER_CLEANUP_PHASE1.md</a></li></ul></li></ul><h3>Theo dõi</h3><ul><li>Total ad revenue</li><li>Revenue by format</li><li>Interstitial impressions</li><li>ARPDAU</li><li>Impressions per DAU</li><li>Session depth</li><li>Engagement time</li><li>D1 / D7</li><li>Rating trend</li></ul><h3>Mong muốn</h3><ul><li>Total ad revenue không giảm quá <code>10%</code></li><li>Banner revenue có thể giảm, nhưng engagement không xấu đi</li><li>ARPDAU ổn định hoặc tăng</li><li>D1 / D7 không giảm sau rollout</li><li>Rating trend không xấu đi</li></ul><h3>Nhận xét</h3><ul><li>Đây là option dễ test nhanh nhất.</li><li>Nhưng nếu crash và retention vẫn xấu, nó không giải quyết được vấn đề gốc.</li></ul></div></details><details class="section"><summary>Option 4: TỐI ƯU STORE CONVERSION</summary><div class="section-content"><h3>Chỉ số hiện tại</h3><ul><li>Store visitors: <code>15,055</code></li><li>Store acquisitions: <code>3,558</code></li><li>Store CVR: <code>23.63%</code></li><li>First opens: <code>1.53K</code>, giảm <code>3%</code></li><li>Main country CVR:<ul><li><code>Brazil</code>: <code>25.4%</code></li><li><code>Turkey</code>: <code>23.22%</code></li><li><code>Mexico</code>: <code>26.72%</code></li><li><code>Indonesia</code>: <code>19.6%</code></li><li><code>United States</code>: <code>22.99%</code></li><li><code>Philippines</code>: <code>30.16%</code></li></ul></li></ul><h3>Tình trạng</h3><ul><li>Listing vẫn còn room để tối ưu.</li><li>Asset listing chưa đầy đủ cho tablet / Chromebook.</li><li>Tuy vậy, conversion không phải vấn đề cấp bách nhất nếu so với crash và retention.</li><li><code>Store CVR 23.63%</code> hiện chưa đủ xấu để coi store page là bottleneck chính.</li><li>Nếu can thiệp vào phần này, cần có lý do kinh doanh rõ hơn là chỉ “listing còn tối ưu được”.</li></ul><h3>Mức độ nên update</h3><ul><li><code>1/5 - Không cần update</code></li></ul><h3>Cần làm</h3><ul><li>Chỉ đánh giá lại listing khi đã có mục tiêu rõ về tăng acquisition hoặc scale traffic</li><li>Chỉ tối ưu thêm title, description, screenshots, feature graphic, tablet / Chromebook assets khi <code>Store CVR</code> trở thành bottleneck rõ hoặc khi cần chuẩn bị cho giai đoạn đẩy growth</li></ul><h3>Mục đích</h3><ul><li>Tăng <code>Store CVR</code></li><li>Tăng số install mới từ cùng một lượng traffic</li></ul><h3>Triển khai</h3><ul><li>Không phải rollout ưu tiên ở giai đoạn hiện tại</li><li>Chỉ mở khi có một trong các điều kiện sau:<ul><li>app đã ổn hơn về crash và retention</li><li>team cần đẩy acquisition</li><li><code>Store CVR</code> giảm rõ hoặc kém rõ rệt ở các locale / country chính</li></ul></li></ul><h3>Theo dõi</h3><ul><li>Store listing visitors</li><li>Store acquisitions</li><li>Store CVR</li><li>CVR theo country</li><li>First opens</li><li>Rating trend sau khi tăng install</li></ul><h3>Mong muốn</h3><ul><li><code>Store CVR &gt; 23.63%</code></li><li>Tăng acquisition mà không làm xấu issue rate / rating</li></ul><h3>Nhận xét</h3><ul><li>Option này có giá trị.</li><li>Nhưng đây là backlog chiến lược cấp sau, không phải việc nên ưu tiên can thiệp ngay lúc này.</li></ul></div></details><details class="section"><summary>Xếp hạng options hiện tại</summary><div class="section-content"><ol><li><code>TỐI ƯU APP CRASH</code></li><li><code>TỐI ƯU RETENTION FIRST SESSION</code></li><li><code>TỐI ƯU MONETIZATION CLEANUP</code></li><li><code>TỐI ƯU STORE CONVERSION</code></li></ol></div></details><details class="section"><summary>Gợi ý chọn options hiện tại</summary><div class="section-content"><p>Nếu chỉ chọn <code>1</code> hướng:</p><ul><li>chọn <code>TỐI ƯU APP CRASH</code></li></ul><p>Nếu chọn <code>1 hướng chính + 1 test nhỏ</code>:</p><ul><li>hướng chính: <code>TỐI ƯU APP CRASH</code></li><li>test nhỏ sau đó: <code>TỐI ƯU MONETIZATION CLEANUP</code></li></ul></div></details><details class="section"><summary>Các chỉ số bị ảnh hưởng sau rollout</summary><div class="section-content"><h3>Nếu triển khai <code>TỐI ƯU APP CRASH</code></h3><ul><li>Chỉ số chính bị ảnh hưởng:<ul><li><code>Crash-free users</code></li><li><code>Issue rate</code></li><li><code>ANR rate</code></li><li><code>Top crash groups</code></li></ul></li><li>Chỉ số kéo theo cần nhìn:<ul><li><code>Rating trend</code></li><li><code>D1 / D7</code></li><li><code>1-day / 7-day active users</code></li><li><code>Total ad revenue</code></li></ul></li></ul><h3>Nếu triển khai <code>TỐI ƯU RETENTION FIRST SESSION</code></h3><ul><li>Chỉ số chính bị ảnh hưởng:<ul><li><code>D1</code></li><li><code>D7</code></li><li><code>D30</code> nếu có</li><li><code>1-day / 7-day / 30-day active users</code></li><li><code>Returning users</code></li><li><code>first_widget_set_success</code></li></ul></li><li>Chỉ số kéo theo cần nhìn:<ul><li><code>Views per active user</code></li><li><code>Engagement time per active user</code></li><li><code>Engaged sessions per active user</code></li><li><code>Crash-free users</code></li><li><code>Issue rate</code></li><li><code>Total ad revenue</code></li><li><code>Revenue by format</code></li></ul></li></ul><h3>Nếu triển khai <code>TỐI ƯU MONETIZATION CLEANUP</code></h3><ul><li>Chỉ số chính bị ảnh hưởng:<ul><li><code>Total ad revenue</code></li><li><code>Revenue by format</code></li><li><code>ARPDAU</code></li><li><code>Interstitial impressions</code></li><li><code>Impressions per DAU</code></li></ul></li><li>Chỉ số kéo theo cần nhìn:<ul><li><code>D1 / D7</code></li><li><code>Views per active user</code></li><li><code>Engagement time per active user</code></li><li><code>Rating trend</code></li><li><code>Crash-free users</code></li><li><code>Issue rate</code></li></ul></li></ul><h3>Nếu triển khai <code>TỐI ƯU STORE CONVERSION</code></h3><ul><li>Chỉ số chính bị ảnh hưởng:<ul><li><code>Store visitors</code></li><li><code>Store acquisitions</code></li><li><code>Store CVR</code></li><li><code>CVR theo country</code></li><li><code>First opens</code></li></ul></li><li>Chỉ số kéo theo cần nhìn:<ul><li><code>D1 / D7</code></li><li><code>Rating trend</code></li><li><code>Issue rate</code></li></ul></li></ul></div></details><details class="section"><summary>Mốc kiểm tra cố định sau publish</summary><div class="section-content"><p>Mỗi phase mặc định phải có 3 mốc theo dõi:</p><ul><li><code>3 days</code></li><li><code>7 days</code></li><li><code>14 days</code></li></ul><p>Chỉ phase đặc biệt mới dùng mốc khác.</p><h3>3 days</h3><ul><li>Đọc sớm các chỉ số nhạy nhất với action vừa rollout</li><li>Mục tiêu:<ul><li>phát hiện lỗi lớn</li><li>phát hiện tụt revenue mạnh</li><li>phát hiện tụt retention hoặc rating bất thường</li></ul></li><li>Ưu tiên xem:<ul><li><code>Crash-free users</code></li><li><code>Issue rate</code></li><li><code>Total ad revenue</code></li><li><code>ARPDAU</code></li><li><code>1-day active users</code></li><li><code>Rating trend</code> nếu có biến động bất thường</li></ul></li></ul><h3>7 days</h3><ul><li>Đây là mốc đọc chính của phase</li><li>Phải đọc đủ:<ul><li>chỉ số chính bị ảnh hưởng bởi action đã rollout</li><li>chỉ số kéo theo</li><li>guardrail về quality, retention, revenue</li></ul></li><li>Mục tiêu:<ul><li>xác định rollout có đi đúng hướng hay không</li><li>xác định có cần chỉnh nhỏ hay không</li></ul></li></ul><h3>14 days</h3><ul><li>Đây là mốc kết luận phase</li><li>Mục tiêu:<ul><li>giữ rollout</li><li>chỉnh rollout</li><li>rollback</li><li>hoặc chuyển sang phase tiếp theo</li></ul></li></ul></div></details><details class="section"><summary>Đầu vào bắt buộc cho phase tiếp theo</summary><div class="section-content"><p>Khi bắt đầu phase tiếp theo, phải đọc lại các kết quả sau của phase trước:</p><ul><li>action nào đã rollout</li><li>các chỉ số chính bị ảnh hưởng của action đó</li><li>kết quả tại <code>3 days</code></li><li>kết quả tại <code>7 days</code></li><li>kết quả tại <code>14 days</code></li><li>chỉ số nào tăng đúng kỳ vọng</li><li>chỉ số nào giảm hoặc vi phạm guardrail</li><li>có crash group mới hay không</li><li>có review / rating xấu mới hay không</li><li>kết luận cuối cùng:<ul><li>giữ</li><li>chỉnh</li><li>rollback</li><li>hay chuyển phase</li></ul></li></ul></div></details></article>
+  </div>
+  <script>
+    const sections = Array.from(document.querySelectorAll('.section'));
+    document.querySelector('[data-action="expand"]').addEventListener('click', () => {
+      sections.forEach(section => section.open = true);
+    });
+    document.querySelector('[data-action="collapse"]').addEventListener('click', () => {
+      sections.forEach(section => section.open = false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
